@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Todo app</title>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>TODO</h1>
+      <button><img src="/images/icon-sun.svg"></button>
+    </header>
+    <section class="new-task">
+      <div class="task">
+        <form action="">
+          <input
+          type="checkbox"
+          disabled="disabled"
+          />
+          <input
+            type="text"
+            class="new-task-input"
+            placeholder="Creat a new todo..."
+            aria-label="Creat a new todo"
+            maxlength="45"
+          />
+        </form>
+      </div>
+    </section>
+    <section class="todo-list">
+      <div class="tasks">
+        <div class="task" draggable="true">
+          <input
+            type="checkbox"
+            id="task-1"
+          />
+          <label for="task-1">
+            <p class="task-name">Complete online Javascript course</p>
+          </label>
+          <button class="btn-del-task"><img src="/images/icon-cross.svg"></button>
+        </div>
+        <!-- /task-1 -->
+        <div class="task" draggable="true">
+          <input
+            type="checkbox"
+            id="task-2"
+          />
+          <label for="task-2">
+            <p class="task-name">Jog around the park 3x</p>
+          </label>
+          <button class="btn-del-task"><img src="/images/icon-cross.svg"></button>
+        </div>
+        <!-- /task-2 -->
+        <div class="task" draggable="true">
+          <input
+            type="checkbox"
+            id="task-3"
+          />
+          <label for="task-3">
+            <p class="task-name">10 minutes meditation</p>
+          </label>
+          <button class="btn-del-task"><img src="/images/icon-cross.svg"></button>
+        </div>
+        <!-- /task-3 -->
+      </div>
+      <div class="info">
+        <span class="task-left">5 items left</span>
+        <div class="filter">
+          <button>All</button>
+          <button>Active</button>
+          <button>Completed</button>
+        </div>
+        <button class="clear">Clear Completed</button>
+      </div>
+    </section>
+    <footer>
+      <p>Drag and drop to reorder list</p>
+    </footer>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">duoshock</a>.
+  </div>
+</body>
+</html>

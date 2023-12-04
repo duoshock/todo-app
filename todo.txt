@@ -1,0 +1,21 @@
+Night/Day mode switch
+    Use javascript, CSS is kind of a hacky way (according to some redditors)
+    - use media queries to detect user theme setting
+        https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
+        https://www.youtube.com/watch?v=_yCgeXFAXTM&ab_channel=KevinPowell
+    example:
+        https://github.com/jjaimealeman/my-theme-switcher/tree/main
+
+Drag and drop to reorder
+
+Task counter
+Filter
+Clear Task
+
+---------------
+
+
+Problem / Research
+
+Find out checkbox animation transition
+Why input with width 100% overlap adjucsion element?

@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+*{
+    --font-fam: 'Josefin Sans', sans-serif;
+    --bg-color: hsl(235, 21%, 11%);
+    --bg-image: url(/images/bg-desktop-dark.jpg);
+    --color-text-header: hsl(234, 78%, 58%);
+    --color-text-primary: hsl(236, 33%, 92%);
+    --color-task: hsl(235, 24%, 19%);
+    --color-task-border: hsla(236, 33%, 92%, 20%);
+    --border-radius: 0.4rem;
+    --shadow: 15px 15px 15px hsla(0, 0%, 0%, 0.2);
+    --spacer: 1.2rem;
+    --task-font-size: 1.125rem;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--bg-color);
+    background-image: var(--bg-image);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top;
+}
+
+main {
+    width: 34rem;
+    margin: 0 auto;
+    padding: 0;
+    font-family: var(--font-fam);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5rem auto 0;
+}
+
+h1 {
+    color: var(--color-text-primary);
+    font-size: 2.5rem;
+    letter-spacing: 1rem;
+    font-weight: 700;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.new-task {
+    margin-top: 2rem;
+    background-color: var(--color-task);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+ .new-task-input {
+    font-size: var(--task-font-size);
+    padding: 0;
+    background: none;
+    border: none;
+    color: inherit;
+    outline: none;
+    font-family: inherit;
+    width: auto;
+}
+
+.new-task-input::placeholder {
+    color: inherit;
+    opacity: 50%;
+}
+
+.todo-list {
+    margin-top: 2rem;
+    background-color: var(--color-task);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.task {
+    font-size: var(--task-font-size);
+    color: var(--color-text-primary);
+    padding: var(--spacer);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task label,
+.task form {
+    display: flex;
+    align-items: center;
+    flex: auto;
+    height: 100%;
+}
+
+.task-name {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.todo-list .task {
+    border-bottom: 1px solid var(--color-task-border);
+}
+
+.btn-del-task {
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+}
+
+.todo-list .task:hover .btn-del-task,
+.btn-del-task:focus {
+    opacity: 1;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid transparent;
+    background:
+    linear-gradient(var(--color-task), var(--color-task)) padding-box,
+    linear-gradient(var(--color-task-border), var(--color-task-border)) border-box;
+    margin-right: 1rem;
+    transition: all 200ms ease-in-out;
+}
+
+input[type="checkbox"]:hover,
+input[type="checkbox"]:focus,
+input[type="checkbox"]:checked:focus          {
+    background:
+    linear-gradient(var(--color-task), var(--color-task)) padding-box,
+    linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
+    outline: none;
+}
+
+input[type="checkbox"]:checked {
+    background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
+}
+
+input[type="checkbox"]:checked::before {
+    content: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="11" height="9"%3E%3Cpath fill="none" stroke="%23FFF" stroke-width="2" d="M1 4.304L3.696 7l6-6"/%3E%3C/svg%3E');
+    color: var(--color-text-primary);
+    width: 1em;
+    height: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-name::after {
+    content: '';
+    position: absolute;
+    background: currentColor;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    width: auto;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 300ms ease;
+}
+
+[type="checkbox"]:checked + label .task-name::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+[type="checkbox"]:checked + label .task-name {
+    opacity: 0.3;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacer);
+}
+
+.task-left,
+.filter button,
+.clear {
+    color: var(--color-text-primary);
+    font-family: inherit;
+    font-size: 0.9rem;
+    opacity: 0.5;
+}
+
+.filter button:hover,
+.clear:hover {
+    opacity: 1;
+}
+
+footer p {
+    text-align: center;
+    color: var(--color-text-primary);
+    opacity: 0.5;
+    font-size: 0.8rem;
+    margin-top: 2rem;
+}
+
+.attribution {
+    margin-top: 2rem;
+    font-size: 11px;
+    text-align: center;
+    color: var(--color-text-primary);
+    opacity: 0.1;
+}
+
+.attribution a:link,
+.attribution a:visited {
+    text-decoration: none;
+    color: inherit;
+}
